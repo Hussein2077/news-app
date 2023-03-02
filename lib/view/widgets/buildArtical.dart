@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 class BuildArticals extends StatelessWidget {
-  const BuildArticals({Key? key}) : super(key: key);
-
+  const BuildArticals({Key? key,required this.artical}) : super(key: key);
+ final Map artical;
   @override
   Widget build(BuildContext context) {
     return  Padding(
@@ -18,9 +18,7 @@ class BuildArticals extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16),
                 image: DecorationImage(
-                    image: NetworkImage(
-                      'https://th.bing.com/th?id=OP.OuH2xFuMcCVFJQ474C474&o=5&pid=21.1',
-                    ),
+                    image: NetworkImage('${artical['image_url']}'),
                     fit: BoxFit.cover),
               ),
             ),
@@ -33,20 +31,20 @@ class BuildArticals extends StatelessWidget {
 
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Expanded(child: Text('Title',
+                    Expanded(child: Text('${artical['title']}',
                       style: TextStyle(
                         fontWeight: FontWeight.w700,
-                        fontSize: 21,
+                        fontSize: 16,
                       ),
                       maxLines: 4,
                       overflow: TextOverflow.ellipsis,
                     ))
                     ,
-                    Expanded(child: Text('2021/253/55',
+                    Text('${artical['pubDate']}',
                       style: TextStyle(
                           color: Colors.grey
                       ),
-                    ))],
+                    )],
                 ),
               ),
             ),
