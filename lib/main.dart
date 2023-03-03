@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'News App',
       theme: ThemeData(
+        primarySwatch: Colors.teal,
           primaryColor: Colors.white,
           appBarTheme: const AppBarTheme(
             titleTextStyle: TextStyle(
