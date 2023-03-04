@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_app/cubit/cubit.dart';
 import 'package:news_app/cubit/states.dart';
 
-import '../widgets/buildArtical.dart';
+import '../widgets/build_artical.dart';
 import '../widgets/devider.dart';
 
 class Business extends StatelessWidget {
@@ -18,7 +18,7 @@ class Business extends StatelessWidget {
           List list =NewsCubit.get(context).business;
 
           return  ConditionalBuilder(
-        condition:state is! BusinessLoadingState,
+        condition:list.isNotEmpty,
         builder: (context)=>ListView.separated(
           physics: const BouncingScrollPhysics(),
           itemBuilder: (BuildContext context, int index) {

@@ -33,3 +33,4 @@ class ScienceFailedState extends NewsState {
 
   ScienceFailedState(this.e);
 }
+class DarkModeState extends NewsState{}

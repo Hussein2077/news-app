@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../cubit/cubit.dart';
 import '../../cubit/states.dart';
-import '../widgets/buildArtical.dart';
+import '../widgets/build_artical.dart';
 import '../widgets/devider.dart';
 
 class Science extends StatelessWidget {
@@ -17,7 +17,7 @@ class Science extends StatelessWidget {
           List list =NewsCubit.get(context).science;
 
           return  ConditionalBuilder(
-            condition:list.length>0,
+            condition:list.isNotEmpty,
             builder: (context)=>ListView.separated(
               physics: const BouncingScrollPhysics(),
               itemBuilder: (BuildContext context, int index) {

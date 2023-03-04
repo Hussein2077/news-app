@@ -17,10 +17,17 @@ class HomePage extends StatelessWidget {
           return Scaffold(
             appBar: AppBar(
               title: const Text('News App'),
-              actions: const [
-                Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Icon(Icons.search_sharp,size: 35,),
+              actions:  [
+                Row(
+                  children:  [
+                    const Icon(Icons.search_sharp,size: 30,),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 8),
+                      child: IconButton(onPressed: (){
+                        // NewsCubit.get(context).changeAppMode();
+                        }                    , icon: const Icon(Icons.brightness_4_outlined)),
+                    )
+                  ],
                 ),
               ],
             ),

@@ -10,6 +10,28 @@ class NewsCubit extends Cubit<NewsState> {
   NewsCubit() : super(NewsIntialState());
 
   static NewsCubit get(context) => BlocProvider.of(context);
+
+  //
+  // bool isDark = false;
+  //
+  // void changeAppMode({ bool? fromShared})
+  // {
+  //   if (fromShared != null)
+  //   {
+  //     isDark = fromShared;
+  //     emit(DarkModeState());
+  //   } else
+  //   {
+  //     isDark = !isDark;
+  //     CacheHelper.putBoolean(key: 'isDark', value: isDark).then((value) {
+  //       emit(DarkModeState());
+  //     });
+  //   }
+  // }
+
+
+
+
   int currentIndex = 0;
 
   List<BottomNavigationBarItem> bottomItems = [
@@ -51,16 +73,14 @@ class NewsCubit extends Cubit<NewsState> {
     DioHelper.getData(
       url: '/api/1/news',
       query: {
-        'country': 'us',
+        'country': 'eg',
         'category': 'business',
         'apiKey': 'pub_18153604b0173dca8904d875c9690e76e4c9e',
       },
     ).then((value){
       business=value.data['results'];
-      print(business[1]['results']);
       emit(BusinessSuccessState());
     }).catchError((e){
-      print(e.toString());
       emit(BusinessFailedState(e));
     });
   }
@@ -72,16 +92,14 @@ class NewsCubit extends Cubit<NewsState> {
     DioHelper.getData(
       url: '/api/1/news',
       query: {
-        'country': 'us',
+        'country': 'eg',
         'category': 'sports',
         'apiKey': 'pub_18153604b0173dca8904d875c9690e76e4c9e',
       },
     ).then((value){
       sports=value.data['results'];
-      print(sports[1]['results']);
       emit(SportsSuccessState());
     }).catchError((e){
-      print(e.toString());
       emit(SportsFailedState(e));
     });
   }
@@ -93,16 +111,14 @@ class NewsCubit extends Cubit<NewsState> {
     DioHelper.getData(
       url: '/api/1/news',
       query: {
-        'country': 'us',
+        'country': 'eg',
         'category': 'science',
         'apiKey': 'pub_18153604b0173dca8904d875c9690e76e4c9e',
       },
     ).then((value){
       science=value.data['results'];
-      print(science[1]['results']);
       emit(ScienceSuccessState());
     }).catchError((e){
-      print(e.toString());
       emit(ScienceFailedState(e));
     });
   }

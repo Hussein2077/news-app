@@ -1,6 +1,6 @@
 // import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 // import 'package:flutter/material.dart';
-// import 'buildArtical.dart';
+// import 'build_artical.dart';
 // import 'devider.dart';
 // class ConditionalBuild extends StatelessWidget {
 //   const ConditionalBuild({Key? key, required this.list}) : super(key: key);

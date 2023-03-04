@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/cubit/cubit.dart';
 class BuildArticals extends StatelessWidget {
   const BuildArticals({Key? key,required this.artical}) : super(key: key);
  final Map artical;
@@ -32,16 +33,15 @@ class BuildArticals extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Expanded(child: Text('${artical['title']}',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w700,
-                        fontSize: 16,
-                      ),
-                      maxLines: 4,
+                      style:  Theme.of(context).textTheme.bodyLarge,
+                      maxLines: 3,
                       overflow: TextOverflow.ellipsis,
-                    ))
+                      ),
+
+                    )
                     ,
                     Text('${artical['pubDate']}',
-                      style: TextStyle(
+                      style: const TextStyle(
                           color: Colors.grey
                       ),
                     )],
